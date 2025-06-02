@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr.Pet</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>Dr.<span class="pet-title">Pet</span></h1>
+        </div>
+        <div class="chat-log" id="chatLog">
+            <div class="message bot-message">Olá! Eu sou o Dr.Pet. Como posso ajudar com a saúde cardiovascular do seu animal de estimação hoje?</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Pergunte ao Dr.Pet...">
+            <button id="sendButton">Enviar</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
