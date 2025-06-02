@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8f5e9; /* Verde bem claro para o fundo da página */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px; 
+    box-sizing: border-box; 
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 650px; /* Aumentado para o chat ficar maior */
+    background-color: #ffffff; /* Fundo branco para o container do chat */
+    border-radius: 12px; /* Bordas um pouco mais arredondadas */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Sombra um pouco mais pronunciada */
+    display: flex;
+    flex-direction: column;
+    height: 80vh; /* Altura aumentada */
+    max-height: 700px; /* Altura máxima aumentada */
+}
+
+.chat-header {
+    background-color: #a5d6a7; /* Verde claro para o cabeçalho */
+    color: #2e7d32; /* Cor do "Dr." (preto) */
+    padding: 20px;
+    text-align: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.chat-header h1 {
+    margin: 0;
+    font-size: 2.2em; /* Tamanho do título aumentado */
+    font-weight: bold;
+}
+
+.chat-header .pet-title {
+    color: #000000; /* Verde escuro para "Pet" */
+}
+
+.chat-log {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto; 
+    border-bottom: 1px solid #e0e0e0; /* Borda sutil */
+    background-color: #f9f9f9; /* Fundo levemente acinzentado para o log */
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 12px 18px; /* Padding aumentado um pouco */
+    border-radius: 20px; /* Bordas mais arredondadas para as mensagens */
+    line-height: 1.5;
+    max-width: 85%; 
+    clear: both; /* Garante que as mensagens não se sobreponham se usar float */
+}
+
+.user-message {
+    background-color: #c8e6c9; /* Verde mais claro para mensagens do usuário */
+    color: #1b5e20; /* Texto verde escuro para contraste */
+    float: right; /* Alinha à direita */
+    /* align-self e margin-left/right não são necessários com float */
+}
+
+.bot-message {
+    background-color: #e0f2f1; /* Verde azulado bem claro para mensagens do bot */
+    color: #004d40; /* Texto verde escuro/azulado */
+    float: left; /* Alinha à esquerda */
+}
+
+/* Clearfix para o container das mensagens caso use float */
+.chat-log::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+.chat-input {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #e0e0e0; /* Borda sutil */
+    background-color: #ffffff; /* Fundo branco para a área de input */
+    border-bottom-left-radius: 12px; /* Arredonda os cantos inferiores */
+    border-bottom-right-radius: 12px;
+}
+
+.chat-input input[type="text"] {
+    flex-grow: 1;
+    padding: 12px 15px; /* Padding aumentado */
+    border: 1px solid #c0c0c0; /* Borda mais suave */
+    border-radius: 25px; 
+    margin-right: 10px;
+    font-size: 1em;
+}
+
+.chat-input input[type="text"]:focus {
+    outline: none;
+    border-color: #4caf50; /* Destaque verde ao focar */
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.chat-input button {
+    padding: 12px 25px; /* Padding aumentado */
+    background-color: #388e3c; /* Verde escuro para o botão */
+    color: white;
+    border: none;
+    border-radius: 25px; 
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.2s ease; /* Transição suave */
+}
+
+.chat-input button:hover {
+    background-color: #2e7d32; /* Verde um pouco mais escuro no hover */
+}
+
+/* Estilos para a barra de rolagem (opcional, para navegadores WebKit) */
+.chat-log::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-log::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.chat-log::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+.chat-log::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
